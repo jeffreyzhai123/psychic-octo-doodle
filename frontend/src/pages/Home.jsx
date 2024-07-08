@@ -6,25 +6,6 @@ import './Home.css'
 const Home = (props) => {
   // Use the useUser hook to get the details about the logged in user
   const { user } = useUser()
-  const navigate = useNavigate()
-
-  const practiceButton = () => {
-    if (user) {
-      navigate("/practice");
-    }
-  }
-
-  const testButton = () => {
-    if (user) {
-      navigate("/test");
-    }
-  }
-
-  const statsButton = () => {
-    if (user) {
-      navigate("/stats");
-    }
-  }
 
 
   return (
@@ -42,27 +23,6 @@ const Home = (props) => {
 
       {/* The children of the SignedIn component are rendered only when the user is signed in. In this case, the app will render the SignOutButton */}
       <SignedIn>
-      <div className={'buttonContainer'}>
-        <input
-          className={'inputButton'}
-          type="button"
-          onClick={practiceButton}
-          value={"Practice"}
-        />
-        <input 
-        className={'inputButton'}
-        type="button"
-        onClick={testButton}
-        value={"Test"}
-        />
-        <input 
-        className={'inputButton'}
-        type="button"
-        onClick={statsButton}
-        value={"Stats"}
-        />
-      </div>
-
         <SignOutButton>
           <input className={'inputButton'} type="button" value={'Log out'} />
         </SignOutButton>
