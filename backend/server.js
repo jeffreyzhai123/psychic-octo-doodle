@@ -2,7 +2,7 @@ import express from 'express'; // Import the Express framework
 import bodyParser from 'body-parser'; // Import body-parser middleware
 import cors from 'cors'; // Import CORS middleware
 
-import { resultRouter } from './routes/results.js';
+import { resultRouter } from './controllers/results.js';
 
 
 const app = express(); // Create an Express application
