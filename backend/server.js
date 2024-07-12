@@ -2,7 +2,7 @@ import express from 'express'; // Import the Express framework
 import bodyParser from 'body-parser'; // Import body-parser middleware
 import cors from 'cors'; // Import CORS middleware
 
-import { easyQ } from './controllers/easyQ.js';
+import { questions } from './controllers/questions.js';
 import { userAnswer } from './controllers/userAnswer.js';
 
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json()); // Parse incoming JSON requests and populate req.bod
 app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
 app.use(express.json());
 
-app.use("/easyq", easyQ);
+app.use("/questions", questions);
 app.use("/useranswer", userAnswer);
 
 // Start the server and make it listen on the defined port

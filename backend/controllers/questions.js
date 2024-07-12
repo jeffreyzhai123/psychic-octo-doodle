@@ -10,9 +10,19 @@ const router = express.Router();
 
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
-  let collection = await db.collection("EasyQ");
+  let collection = await db.collection("questions");
   let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
 
-export { router as easyQ };
+// This section will help you get a single record by id
+router.get("/:difficulty", async (req, res) => {
+  let collection = await db.collection("questions");
+  let query = { difficulty: req.params.difficulty };
+  let result = await collection.find(query).toArray();
+
+  if (!result) res.send("Not found").status(404);
+  else res.send(result).status(200);
+});
+
+export { router as questions };
