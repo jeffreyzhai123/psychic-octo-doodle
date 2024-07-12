@@ -5,7 +5,6 @@ import Navigatebar from '../components/Navbar';
 import DropMenu from '../components/Practice/Dropdown';
 import SelectCard from '../components/Practice/SelectCard';
 import QuestionCard from '../components/Practice/QuestionCard';
-import Form from 'react-bootstrap/Form';
 
 //should add useEffect later on to deal with having to make api get calls to request data from backend
 
@@ -15,10 +14,6 @@ function Practice() {
   const [questions, setQuestions] = useState([]); // questions pulled from database
   const [result, setResult] = useState(""); // sets the result
   const navigate = useNavigate();
-
-  const exitButton = () => {
-      navigate("/")
-  }
 
   // fetch function for questions (async)
   const fetchQuestions = async (difficulty) => {
