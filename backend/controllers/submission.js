@@ -33,4 +33,4 @@ router.post('/', async (req, res) => {
     res.json({code: extracted, test: testResult, points: correctness});
   });
 
-  export { router as userAnswer };
+  export { router as submission };
