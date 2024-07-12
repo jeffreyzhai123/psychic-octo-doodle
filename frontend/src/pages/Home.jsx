@@ -1,6 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { SignedIn, SignedOut, SignInButton, SignOutButton, useUser } from '@clerk/clerk-react'
+import Navigatebar from '../components/Navbar'
+import DropMenu from '../components/Practice/Dropdown'
 import './Home.css'
 
 const Home = (props) => {
@@ -23,6 +24,9 @@ const Home = (props) => {
 
       {/* The children of the SignedIn component are rendered only when the user is signed in. In this case, the app will render the SignOutButton */}
       <SignedIn>
+        <div>
+          <Navigatebar />
+        </div>
         <SignOutButton>
           <input className={'inputButton'} type="button" value={'Log out'} />
         </SignOutButton>
