@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'; // Import body-parser middleware
 import cors from 'cors'; // Import CORS middleware
 
 import { questions } from './controllers/questions.js';
-import { userAnswer } from './controllers/userAnswer.js';
+import { submission } from './controllers/submission.js';
 
 
 const app = express(); // Create an Express application
@@ -15,7 +15,7 @@ app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
 app.use(express.json());
 
 app.use("/questions", questions);
-app.use("/useranswer", userAnswer);
+app.use("/submission", submission);
 
 // Start the server and make it listen on the defined port
 app.listen(port, () => {
