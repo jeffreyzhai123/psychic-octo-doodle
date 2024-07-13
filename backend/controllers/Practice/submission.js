@@ -1,6 +1,6 @@
 import express from 'express';
-import { callChat, extractResponse } from '../services/ollamaService.js'
-import { testSwitch } from '../utils/userTest.js';
+import { callChat, extractResponse } from '../../services/ollamaService.js'
+import { testSwitch } from '../../utils/easyTest.js';
 
 const router = express.Router();
 
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     console.log("ans: " + ans);
     const extracted = extractResponse(ans);
     console.log("extracted: " + extracted);
-    testId = parseInt(userAnswer.userSelection);
+    testId = parseInt(userAnswer.questionNumber);
     console.log("testID: ", testId);
 
     const testResult = await testSwitch(testId, extracted);

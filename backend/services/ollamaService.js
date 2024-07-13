@@ -12,7 +12,7 @@ export async function callChat(userInput) {
             //must be in array format for messages
             messages: [{
                 role: 'user',
-                content: "Generate a javascript function using the description: " + userInput + ". Name this function TestFunction"
+                content: "Generate a javascript function using the description: " + userInput + ". Name this function TestFunction, generate ONLY the function, must include ```javascript"
             }]
         });
         return response.message.content;
@@ -24,12 +24,15 @@ export async function callChat(userInput) {
 }
 
 export function extractResponse(api_response) {
-    const startIndex = api_response.indexOf('javascript') + 10;
+    const startIndex = api_response.indexOf('```javascript');
+
+    // Adjust startIndex to the start of the actual code
+    const codeStartIndex = startIndex + '```javascript\n'.length;
 
     // Find the index of the closing backtick '`' that marks the end of the response
-    const endIndex = api_response.indexOf('`', startIndex);
+    const endIndex = api_response.indexOf('```', codeStartIndex);
 
     // Extract the code block from the response based on the indices
-    const extractedFunc = api_response.substring(startIndex, endIndex);
+    const extractedFunc = api_response.substring(codeStartIndex, endIndex);
     return extractedFunc;
 }

@@ -1,8 +1,8 @@
 import Sandbox from 'sandbox';
-const sandbox = new Sandbox();
+const s = new Sandbox();
 
 export async function testSwitch(question_number, code) {
-    question_number--;
+    question_number;
     
     switch(question_number) {
       case 0:
