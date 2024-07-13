@@ -24,10 +24,10 @@ export async function callChat(userInput) {
 }
 
 export function extractResponse(api_response) {
-    const startIndex = api_response.indexOf('```javascript');
+    const startIndex = api_response.indexOf('javascript');
 
     // Adjust startIndex to the start of the actual code
-    const codeStartIndex = startIndex + '```javascript\n'.length;
+    const codeStartIndex = startIndex + 'javascript\n'.length;
 
     // Find the index of the closing backtick '`' that marks the end of the response
     const endIndex = api_response.indexOf('```', codeStartIndex);
