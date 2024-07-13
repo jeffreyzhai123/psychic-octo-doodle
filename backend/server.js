@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'; // Import body-parser middleware
 import cors from 'cors'; // Import CORS middleware
 
 import { questions } from './controllers/questions.js';
-import { submission } from './controllers/submission.js';
+import { submission } from './controllers/Practice/submission.js';
 
 
 const app = express(); // Create an Express application

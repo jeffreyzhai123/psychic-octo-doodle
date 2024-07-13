@@ -1,7 +1,7 @@
 import React from 'react'
 import { SignedIn, SignedOut, SignInButton, SignOutButton, useUser } from '@clerk/clerk-react'
 import Navigatebar from '../components/Navbar'
-import DropMenu from '../components/Practice/Dropdown'
+import DropMenu from '../components/Practice/DropMenu'
 import './Home.css'
 
 const Home = (props) => {
