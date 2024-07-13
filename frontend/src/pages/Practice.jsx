@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Navigatebar from '../components/Navbar';
 import DropMenu from '../components/Practice/DropMenu';
@@ -7,6 +6,7 @@ import SelectCard from '../components/Practice/SelectCard';
 import QuestionCard from '../components/Practice/QuestionCard';
 import SubmissionBar from '../components/Practice/SubmissionBar';
 import ResultAlert from '../components/Practice/ResultAlert';
+import { fetchQuestions } from '../services/Practice/QuestionsRetrieve';
 
 //should add useEffect later on to deal with having to make api get calls to request data from backend
 
@@ -16,40 +16,25 @@ function Practice() {
   const [questions, setQuestions] = useState([]); // questions pulled from database
   const [result, setResult] = useState(""); // sets the result
 
-  // fetch function for questions (async)
-  const fetchQuestions = async (difficulty) => {
-      try {
-        const response = await fetch(`http://localhost:3080/questions/${difficulty}`); // Adjust port if necessary
-        if (!response.ok) {
-          throw new Error('Failed to fetch questions');
-        }
-        // raw query (with _id)
-        const questionsQuery = await response.json();
-        // data with only question field
-        const questionsData = questionsQuery.map(item => item.question);
-        // sets the questions useState
-        setQuestions(questionsData);
-      } catch (error) {
-        console.error('Error fetching questions:', error);
-      }
-  };
-
   return (
       <div className='main-container'>
           <Navigatebar />
 
           <div className='difficulty-select'>
             <Button variant="success" onClick={() => {
-              fetchQuestions("easy")
+              fetchQuestions("easy", setQuestions)
               setSelectedQuestion(-1)
+              setResult("")
               }}>Easy</Button>{' '}
             <Button variant="warning" onClick={() => {
-              fetchQuestions("medium")
+              fetchQuestions("medium", setQuestions)
               setSelectedQuestion(-1)
+              setResult("")
               }}>Medium</Button>{' '}
             <Button variant="danger" onClick={() => {
-              fetchQuestions("hard")
+              fetchQuestions("hard", setQuestions)
               setSelectedQuestion(-1)
+              setResult("")
               }}>Hard</Button>{' '}
           </div>
 
