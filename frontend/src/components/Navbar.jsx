@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from 'react-router-dom';
 
 function Navigatebar() {
@@ -17,6 +16,7 @@ function Navigatebar() {
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
             <Nav.Link onClick={() => navigate("/practice")}>Practice</Nav.Link>
+            <Nav.Link onClick={() => navigate("/test")}>Test</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
