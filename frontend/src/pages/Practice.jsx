@@ -3,10 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Navigatebar from '../components/Navbar';
 import DropMenu from '../components/Practice/DropMenu';
 import SelectCard from '../components/Practice/SelectCard';
-import QuestionCard from '../components/Practice/QuestionCard';
+import QuestionCard from '../components/QuestionCard';
 import SubmissionBar from '../components/Practice/SubmissionBar';
 import ResultAlert from '../components/Practice/ResultAlert';
-import { fetchQuestions } from '../services/Practice/QuestionsRetrieve';
+import { fetchQuestions } from '../services/QuestionsRetrieve';
 
 //should add useEffect later on to deal with having to make api get calls to request data from backend
 
@@ -20,6 +20,7 @@ function Practice() {
       <div className='main-container'>
           <Navigatebar />
 
+          {/* Difficulty selection */}
           <div className='difficulty-select'>
             <Button variant="success" onClick={() => {
               fetchQuestions("easy", setQuestions)
@@ -38,6 +39,7 @@ function Practice() {
               }}>Hard</Button>{' '}
           </div>
 
+          {/* Question selection */}
           <div className='question-choice'>
             { questions?.length > 0
               ? (
@@ -46,7 +48,8 @@ function Practice() {
                 <SelectCard />
               ) }
           </div>
-
+          
+          {/* Question display */}
           <div className='question-display'>
             { selectedQuestion > -1 && questions?.length > 0 &&
             <QuestionCard selectedQuestion={selectedQuestion} questions={questions}/> }
