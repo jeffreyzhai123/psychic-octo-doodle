@@ -4,6 +4,7 @@ import cors from 'cors'; // Import CORS middleware
 
 import { questions } from './controllers/questions.js';
 import { submission } from './controllers/Practice/submission.js';
+import { results } from './controllers/Test/results.js';
 
 
 const app = express(); // Create an Express application
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use("/questions", questions);
 app.use("/submission", submission);
+app.use("/results", results);
 
 // Start the server and make it listen on the defined port
 app.listen(port, () => {
