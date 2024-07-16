@@ -3,7 +3,7 @@ import Alert from 'react-bootstrap/Alert';
 function ResultAlert({result}) {
   return (
     <div>
-      {result.test.includes("failed") ? (
+      {(result.test.includes("failed") && !result.code.includes("javascript")) ? (
         <Alert variant="danger">
           <Alert.Heading>Result</Alert.Heading>
           <p className="mb-0">

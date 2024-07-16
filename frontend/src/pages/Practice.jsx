@@ -5,7 +5,7 @@ import DropMenu from '../components/Practice/DropMenu';
 import SelectCard from '../components/Practice/SelectCard';
 import QuestionCard from '../components/QuestionCard';
 import SubmissionBar from '../components/Practice/SubmissionBar';
-import ResultAlert from '../components/Practice/ResultAlert';
+import ResultAlert from '../components/ResultAlert';
 import { fetchQuestions } from '../services/QuestionsRetrieve';
 
 //should add useEffect later on to deal with having to make api get calls to request data from backend
@@ -54,12 +54,14 @@ function Practice() {
             { selectedQuestion > -1 && questions?.length > 0 &&
             <QuestionCard selectedQuestion={selectedQuestion} questions={questions}/> }
           </div>
-
+          
+          {/* Submission bar */}
           <div className='user-input'>
             { selectedQuestion > -1 && questions?.length > 0 &&
             <SubmissionBar setResult={setResult} questionNumber={selectedQuestion} /> }
           </div>
 
+          {/* Result display */}
           <div className='result-display'>
             { result && 
             <ResultAlert result={result} />}
