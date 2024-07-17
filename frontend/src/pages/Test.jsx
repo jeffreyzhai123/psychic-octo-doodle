@@ -5,7 +5,7 @@ import NoQuestionsCard from '../components/Test/NotAvaliable';
 import QuestionCard from '../components/QuestionCard';
 import SubmissionBar from '../components/Test/SubmissionBar';
 import ResultAlert from '../components/ResultAlert';
-import { fetchUser } from '../services/Test/UserRetrieve';
+import { fetchUser } from '../services/UserRetrieve';
 import { fetchQuestions } from '../services/QuestionsRetrieve';
 import { useUser } from '@clerk/clerk-react'
 import { createResult, updateResult } from '../services/Test/TestSubmission';
