@@ -17,6 +17,7 @@ function Navigatebar() {
             <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
             <Nav.Link onClick={() => navigate("/practice")}>Practice</Nav.Link>
             <Nav.Link onClick={() => navigate("/test")}>Test</Nav.Link>
+            <Nav.Link onClick={() => navigate("/statistics")}>Statistics</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
