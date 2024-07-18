@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navigatebar from '../components/Navbar';
 import { useUser } from '@clerk/clerk-react'
 import { fetchResults } from '../services/Statistics/ResultsRetrieve';
-import ResultAlert from '../components/ResultAlert';
+import QuestionCard from '../components/Statistics/ResultCard';
 
 function Test() {
   const [results, setResults] = useState([]);
@@ -18,7 +18,12 @@ function Test() {
         <Navigatebar />
         {/* Result display */}
         <div className='result-display'>
-            
+          { results?.length > 0 
+            ? ( 
+            <QuestionCard results={results}/>
+            ) : (
+            <h1>No results to display</h1>
+            ) }
         </div>
 
       </div>
