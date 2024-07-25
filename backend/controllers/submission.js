@@ -1,6 +1,6 @@
 import express from 'express';
-import { callChat, extractResponse } from '../../services/ollamaService.js'
-import { testSwitch } from '../../utils/easyTest.js';
+import { callChat, extractResponse } from '../services/ollamaService.js'
+import { testSwitch } from '../utils/easyTest.js';
 
 const router = express.Router();
 
