@@ -1,7 +1,7 @@
 import express from "express";
 
 // This will help us connect to the database
-import db from "../../config/connection.js";
+import db from "../config/connection.js";
 
 // router is an instance of the express router.
 // We use it to define our routes.

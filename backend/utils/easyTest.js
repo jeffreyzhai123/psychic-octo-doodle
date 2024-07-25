@@ -18,7 +18,7 @@ export async function testSwitch(question_number, code) {
     }
 }
 
-function runTests(code, testCases) {
+export function runTests(code, testCases) {
     return new Promise((resolve, reject) => {
       const results = []; // Array to store the results of each test
   
