@@ -1,1 +1,1 @@
-ETERNAL SUFFERING
+AI Tutoring Application
