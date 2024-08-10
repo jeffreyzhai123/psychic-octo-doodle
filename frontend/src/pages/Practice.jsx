@@ -21,18 +21,18 @@ function Practice() {
           <Navigatebar />
 
           {/* Difficulty selection */}
-          <div className='difficulty-select'>
-            <Button variant="success" onClick={() => {
+          <div className='flex items-center justify-center'>
+            <Button className='mx-3' variant="success" onClick={() => {
               fetchQuestions("easy", setQuestions)
               setSelectedQuestion(-1)
               setResult("")
               }}>Easy</Button>{' '}
-            <Button variant="warning" onClick={() => {
+            <Button className='mx-3' variant="warning" onClick={() => {
               fetchQuestions("medium", setQuestions)
               setSelectedQuestion(-1)
               setResult("")
               }}>Medium</Button>{' '}
-            <Button variant="danger" onClick={() => {
+            <Button className='mx-3' variant="danger" onClick={() => {
               fetchQuestions("hard", setQuestions)
               setSelectedQuestion(-1)
               setResult("")
@@ -40,7 +40,7 @@ function Practice() {
           </div>
 
           {/* Question selection */}
-          <div className='question-choice'>
+          <div className='flex items-center justify-center mt-2 mb-2'>
             { questions?.length > 0
               ? (
                 <DropMenu numQuestions={questions.length} callback={setSelectedQuestion} setResult={setResult}/>
